@@ -103,7 +103,8 @@ async function finalizeHtmlOne(artifact: Artifact) {
 
 	const replacements = await Promise.all(promises);
 	for (const [search, replace] of replacements) {
-		contents = contents.replaceAll(search, replace);
+		// Insert contents literally, without interpreting replacement patterns like $&.
+		contents = contents.replaceAll(search, () => replace);
 	}
 
 	artifact.update(buildOptions.is_prod ? minifyHtml(contents) : contents);

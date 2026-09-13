@@ -980,7 +980,7 @@ async function finalizeHtmlOne(artifact) {
 		}
 	}
 	const replacements = await Promise.all(promises);
-	for (const [search, replace] of replacements) contents = contents.replaceAll(search, replace);
+	for (const [search, replace] of replacements) contents = contents.replaceAll(search, () => replace);
 	artifact.update(is_prod ? minifyHtml(contents) : contents);
 }
 /** Returns the replacement script tag for the given dependency artifact. */

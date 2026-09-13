@@ -20,7 +20,7 @@ switch (command) {
 	case "dev":
 		if (process.argv.includes("--no-watch")) {
 			await import("../sync-Dv6g5XwJ.mjs");
-			await import("../build-D4OO3ymT.mjs");
+			await import("../build-CTejE7Br.mjs");
 			await import(output_path + "/main.js");
 		} else {
 			runBuild();
@@ -49,7 +49,7 @@ switch (command) {
 		break;
 	case "build":
 		await import("../sync-Dv6g5XwJ.mjs");
-		await import("../build-D4OO3ymT.mjs");
+		await import("../build-CTejE7Br.mjs");
 		break;
 	case "sync":
 		await import("../sync-Dv6g5XwJ.mjs");
